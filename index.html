@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>onclick Image Popup jQuery Demo</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Image Popup CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Image Popup JS -->
+    <script src="js/jquery.image-popup.js"></script>
+    <!-- Demo CSS -->
+    <link rel="stylesheet" href="css/demo.css" />
+  </head>
+  <body>
+    <main>
+      <article>
+        <ul id="imageGallery">
+          <li>
+            <a><img src="img/img1.jpg" alt="New Image" /></a>
+            <h5>New Image</h5>
+          </li>
+          <li>
+            <a><img src="img/img2.jpg" alt="New Signature" /></a>
+            <h5>New Signature</h5>
+          </li>
+        </ul>
+      </article>
+    </main>
+
+    <script>
+      $(document).ready(function () {
+        $("#imageGallery").imagePopup({
+          overlay: "rgba(0, 0, 0, 0.7)",
+
+          closeButton: {
+            src: "img/close.png",
+            width: "40px",
+            height: "40px",
+          },
+          imageBorder: "10px solid #ffffff",
+          borderRadius: "6px",
+          imageWidth: "800px",
+          imageHeight: "auto",
+          imageCaption: {
+            exist: true,
+            color: "#ffffff",
+            fontSize: "18px",
+          },
+          open: function () {
+            console.log("opened");
+          },
+          close: function () {
+            console.log("closed");
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
